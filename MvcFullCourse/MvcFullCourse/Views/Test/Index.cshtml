@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+    //"~/Views/Shared/_Layout.cshtml"
+    Layout = null;
+}
+
+<h2>Index @ViewBag.MyName</h2>
+
+<h2>İSİMLER LİSTESİ</h2>
+DROPDOWN
+<select id="Select1">
+    @foreach (var item in ViewBag.Names)
+    {
+
+     <option> @item</option>
+       
+
+    }
+
+
+</select>
+<table>
+    TABLO
+    @foreach (var item in ViewBag.Names)
+    {
+
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+</table>
