@@ -1,0 +1,16 @@
+﻿@model MvcFullCourse.Models.EmployeeViewModel
+@{
+    ViewBag.Title = "EmployeDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmployeDetail</h2>
+<table class="table table-striped">
+    MODEL TABLO
+    <tr><td><b>ID</b> @Model.Id</td></tr>
+    <tr><td><b>NAME</b> @Model.name</td></tr>
+    <tr><td><b>DEPARTMENT </b>@Model.departmentname</td></tr>
+    <tr><td><b>COUNTRY</b> @Model.adress</td></tr>
+
+</table>
+

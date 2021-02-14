@@ -1,21 +1,22 @@
-﻿
+﻿@model IEnumerable<MvcFullCourse.Models.EmployeeViewModel>
 @{
     ViewBag.Title = "Index";
 
-    //"~/Views/Shared/_Layout.cshtml"
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = null;
 }
 
 <h2>Index @ViewBag.MyName</h2>
 
+<br />
 <h2>İSİMLER LİSTESİ</h2>
 DROPDOWN
 <select id="Select1">
     @foreach (var item in ViewBag.Names)
     {
 
-     <option> @item</option>
-       
+        <option> @item</option>
+
 
     }
 
@@ -32,4 +33,38 @@ DROPDOWN
             </td>
         </tr>
     }
+</table>
+
+<table class="table table-striped">
+    MODEL TABLO
+    <tr>
+        <td><b>ID</b></td>
+        <td><b>NAME</b></td>
+        <td><b>DEPARTMENT</b></td>
+        <td><b>COUNTRY</b></td>
+        <td><b>DETAILS</b></td>
+        <td><b>DETAILS</b></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @item.Id
+            </td>
+
+            <td>@item.name</td>
+
+            <td>@item.departmentname</td>
+
+            <td>@item.adress</td>
+            <td><a class="btn btn-primary" href="EmployeDetail?ID=@item.Id">Details</a></td>
+            <td>@Html.ActionLink("Details", "EmployeDetail", new { ID = item.Id }, new { @class = "btn btn-info" })</td>
+
+        </tr>
+
+
+
+    }
+
 </table>
